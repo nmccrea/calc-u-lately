@@ -1,24 +1,8 @@
-# README
+# Calc-U-Lately
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###### The latest in calculation.
 
-Things you may want to cover:
 
-* Ruby version
+**Ruby Version:** 2.4.0
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Rails Version:** 5.1
