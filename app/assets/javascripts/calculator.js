@@ -2,7 +2,7 @@ $(document).ready( function() {
 
   var calculation_url = '/calculate';
 
-  $('.submit').click( function() {
+  $('.submit').click( function( event ) {
     // Update the form with the appropriate operation.
     $('#operation').val( event.target.value );
 
