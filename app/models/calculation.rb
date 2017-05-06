@@ -34,4 +34,18 @@ class Calculation
       else raise UnsupportedOperationError, "Unsupported operation."
     end
   end
+
+  ##
+  # Return the string representation of this calculation.
+
+  def as_string
+    return case @operation
+      when '+'    then "#{@input_a} + #{@input_b} = #{result}"
+      when '-'    then "#{@input_a} - #{@input_b} = #{result}"
+      when '*'    then "#{@input_a} * #{@input_b} = #{result}"
+      when '/'    then "#{@input_a} / #{@input_b} = #{result}"
+      when '**'   then "#{@input_a} ** #{@input_b} = #{result}"
+      when 'sqrt' then "sqrt( #{@input_a} ) = #{result}"
+    end
+  end
 end
