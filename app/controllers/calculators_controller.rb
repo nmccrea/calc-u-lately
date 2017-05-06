@@ -1,5 +1,5 @@
 class CalculatorsController < ApplicationController
 
-  def calculator
+  def new
   end
 end
