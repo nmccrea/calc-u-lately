@@ -1,1 +1,35 @@
-div#calculator
+= form_tag( calculate_path, method: 'post', id: 'calculator' )
+
+  div
+    = label_tag 'input_a', 'Input A'
+    = number_field_tag 'input_a'
+
+  div
+    = label_tag 'input_b', 'Input B'
+    = number_field_tag 'input_b'
+
+  = hidden_field_tag 'operation'
+
+div
+  button#add.submit value='+'
+    | +
+  button#subtract.submit value='-'
+    | -
+  button#multiply.submit value='*'
+    | *
+  button#divide.submit value='/'
+    | /
+  button#exponentiate.submit value='**'
+    | **
+  button#sqrt.submit value='sqrt'
+    | sqrt
+
+h4 Result
+span#result
+
+h4 History
+ul#history
+  - if session[:history]
+    - session[:history].reverse.each do |value|
+      li
+        span = value
