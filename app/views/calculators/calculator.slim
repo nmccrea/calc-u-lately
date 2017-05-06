@@ -1,35 +1,45 @@
-= form_tag( calculate_path, method: 'post', id: 'calculator' )
+div.col-md-8.col-md-offset-2
 
-  div
-    = label_tag 'input_a', 'Input A'
-    = number_field_tag 'input_a'
+  = form_tag( calculate_path, method: 'post', id: 'calculator' )
+    = hidden_field_tag 'operation'
 
-  div
-    = label_tag 'input_b', 'Input B'
-    = number_field_tag 'input_b'
+    div.col-md-4.container
+      = label_tag 'input_a', 'A',   class: 'col-md-1'
+      = number_field_tag 'input_a', class: 'col-md-3'
 
-  = hidden_field_tag 'operation'
+    div.col-md-4.container
+      = label_tag 'input_b', 'B',   class: 'col-md-1'
+      = number_field_tag 'input_b', class: 'col-md-3'
 
-div
-  button#add.submit value='+'
-    | +
-  button#subtract.submit value='-'
-    | -
-  button#multiply.submit value='*'
-    | *
-  button#divide.submit value='/'
-    | /
-  button#exponentiate.submit value='**'
-    | **
-  button#sqrt.submit value='sqrt'
-    | sqrt
+    div.col-md-4.container.result-container
+      div.col-md-7
+        label Result
+      div#result.col-md-3
 
-h4 Result
-span#result
 
-h4 History
-ul#history
-  - if session[:history]
-    - session[:history].reverse.each do |value|
-      li
-        span = value
+  div.row.col-md-8.col-md-offset-2
+    button#add.submit value='+'
+      | +
+    button#subtract.submit value='-'
+      | -
+    button#multiply.submit value='*'
+      | *
+    button#divide.submit value='/'
+      | /
+    button#exponentiate.submit value='**'
+      | **
+    button#sqrt.submit value='sqrt'
+      | sqrt
+
+  div.row.col-md-8.col-md-offset-2
+    span NOTE: The sqrt function only operates on input A.
+
+  hr.col-md-12
+
+  div.row.col-md-10.col-md-offset-1
+    h4 History
+    ul#history
+      - if session[:history]
+        - session[:history].reverse.each do |value|
+          li
+            span = value
